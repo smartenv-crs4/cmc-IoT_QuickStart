@@ -33,6 +33,7 @@ docker build -t cmc-iot .
 cd ..
 
 cd docker_quick/
+mkdir data data/db
 docker-compose up -d
 cd ..
 
