@@ -1,0 +1,265 @@
+{
+  "production":{
+    "dbHost":"mongo",
+    "dbPort":"27017",
+    "dbName":"cmc-IoT",
+    "dbAuth": {
+      "user": null,
+      "psw": null
+    },
+    "authUrl":"http://cmc-auth:3050",
+    "cmcAppUrl":"http://cmc-app:3070",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLUlvVCIsImVuYWJsZWQiOnRydWUsImV4cCI6MTg3MDYxNzU0MzIwMn0.sqCOfq8HvQQmxWLCrAtFf1s3GvxAFPQ_ZhCyFuukpBs",
+    "microserviceConf": {
+      "port": 3080,
+      "description": "CMC IoT is the internet of Things microservice of the CMC (Crs4 Microservice Core) framework. It takes care of managing ......"
+    },
+    "logfile":"/var/log/progressBar.log",
+    "pagination": {
+      "allowLargerLimit": false,
+      "limit":50,
+      "skip":0,
+      "totalCount": false
+    },
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "customSchema": {
+        "deviceSchema": null,
+        "deviceTypeSchema": null,
+        "unitSchema": null,
+        "vendorSchema": null,
+        "observationSchema": null,
+        "observedPropertySchema": null,
+        "thingSchema": null,
+        "siteSchema": null,
+        "apiActionSchema": null,
+        "domainSchema": null
+    },
+    "cmcIoTThingsOwner": {
+      "name": "Cmc-IoT dismissed Things owner",
+      "email": "cmc-iot@cmc.com",
+      "password": "cmcIot",
+      "tokenType": "cmc-IoT-ThOw"
+    },
+    "cmcIoTOptions": {
+      "observationsCanBeUpdated": true,
+      "observationsCanBeDeleted": true,
+      "whoCanHandleThingsAndDevicesOwner": ["admin"],
+      "authorizationVerbToHandleDismissedStatus": ["admin"],
+      "observationsCacheItems":10
+    },
+    "redisCache":{
+      "must": true,
+      "totalRetryTime": 120000,
+      "maxRetryTime": 10000,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": false,
+      "connection": {
+        "host": "redis",
+        "port":  6379,
+        "db": 0,
+        "password": null
+      }
+    },
+    "redisPushNotification":{
+      "must": true,
+      "totalRetryTime": 120000,
+      "maxRetryTime": 10000,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": false,
+      "notificationChannelsPrefix":{
+        "observation": "observation:",
+        "device": "device:",
+        "thing": "thing:"
+      },
+      "connection": {
+        "host": "redis",
+        "port":  6379,
+        "db": 1,
+        "password": null
+      }
+    }
+
+  },
+  "dev":{
+    "dbHost":"127.0.0.1",
+    "dbPort":"27017",
+    "dbName":"cmc-IoT-DevMode",
+    "dbAuth": {
+      "user": null,
+      "psw": null
+    },
+    "authUrl":"http://localhost:3005",
+    "cmcAppUrl":"http://localhost:3020",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLUlvVCIsImVuYWJsZWQiOnRydWUsImV4cCI6MTg3MDYxNzU0MzIwMn0.sqCOfq8HvQQmxWLCrAtFf1s3GvxAFPQ_ZhCyFuukpBs",
+    "microserviceConf": {
+      "port": 3030,
+      "description": "CMC IoT is the internet of Things microservice of the CMC (Crs4 Microservice Core) framework. It takes care of managing ......"
+    },
+    "logfile":"/var/log/progressBar.log",
+    "pagination": {
+      "allowLargerLimit": false,
+      "limit":50,
+      "skip":0,
+      "totalCount": false
+    },
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "customSchema": {
+      "deviceSchema": null,
+      "deviceTypeSchema": null,
+      "unitSchema": null,
+      "vendorSchema": null,
+      "observationSchema": null,
+      "observedPropertySchema": null,
+      "thingSchema": null,
+      "siteSchema": null,
+      "apiActionSchema": null,
+      "domainSchema": null
+    },
+    "cmcIoTThingsOwner": {
+      "name": "Cmc-IoT dismissed Things owner",
+      "email": "cmc-iot@cmc.com",
+      "password": "cmcIot",
+      "tokenType": "cmc-IoT-ThOw"
+    },
+    "cmcIoTOptions": {
+      "observationsCanBeUpdated": true,
+      "observationsCanBeDeleted": true,
+      "whoCanHandleThingsAndDevicesOwner": ["admin"],
+      "authorizationVerbToHandleDismissedStatus": ["admin"],
+      "observationsCacheItems":10
+    },
+    "redisCache":{
+      "must": true,
+      "totalRetryTime": 120000,
+      "maxRetryTime": 10000,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": false,
+      "connection": {
+        "host": "156.148.22.111",
+        "port":  6379,
+        "db": 0,
+        "password": null
+      }
+    },
+    "redisPushNotification":{
+      "must": true,
+      "totalRetryTime": 120000,
+      "maxRetryTime": 10000,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": false,
+      "notificationChannelsPrefix":{
+        "observation": "observations:",
+        "device": "device:",
+        "thing": "thing:"
+      },
+      "connection": {
+        "host": "127.0.0.1",
+        "port":  6379,
+        "db": 1,
+        "password": null
+      }
+    }
+  },
+  "test":{
+    "dbHost":"127.0.0.1",
+    "dbPort":"27017",
+    "dbName":"cmc-IoT-TestMode",
+    "dbAuth": {
+      "user": null,
+      "psw": null
+    },
+    "authUrl":"http://localhost:3005",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLUlvVCIsImVuYWJsZWQiOnRydWUsImV4cCI6MTg3MDY5MDU2NDE1N30.tJyuf8laVp1Iy6seegiQt9Ig4HemeHq_BkBzs49Ommo",
+    "cmcAppUrl":"http://localhost:3020",
+    "microserviceConf": {
+      "port": 3030,
+      "description": "CMC IoT is the internet of Things microservice of the CMC (Crs4 Microservice Core) framework. It takes care of managing ......"
+    },
+    "logfile":"/var/log/progressBar.log",
+    "pagination": {
+      "allowLargerLimit": false,
+      "limit":50,
+      "skip":0,
+      "totalCount": false
+    },
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "customSchema": {
+      "deviceSchema": null,
+      "deviceTypeSchema": null,
+      "unitSchema": null,
+      "vendorSchema": null,
+      "observationSchema": null,
+      "observedPropertySchema": null,
+      "thingSchema": null,
+      "siteSchema": null,
+      "apiActionSchema": null,
+      "domainSchema": null
+    },
+    "testConfig":{
+      "usertokens":["UserType1"],
+      "adminTokens":["admin"],
+      "authApptokens":["webui"],
+      "adminLogin": {
+        "username": "admin@admin.com",
+        "password": "admin"
+      },
+      "userTypeTest":{
+        "name": "Micio",
+        "email": "mario@cmc.com",
+        "password": "miciomicio",
+        "surname":"Macio"
+      },
+      "webUiAppTest":{
+        "email": "webui@webui.it",
+        "password": "miciomicio"
+      },
+      "msName":"cmc-IoT",
+      "testUrl": "http://localhost"
+    },
+    "cmcIoTThingsOwner": {
+      "name": "Cmc-IoT dismissed Things owner",
+      "email": "cmc-iot@cmc.com",
+      "password": "cmcIot",
+      "tokenType": "cmc-IoT-ThOw"
+    },
+    "cmcIoTOptions": {
+      "observationsCanBeUpdated": true,
+      "observationsCanBeDeleted": true,
+      "whoCanHandleThingsAndDevicesOwner": ["admin","webui"],
+      "authorizationVerbToHandleDismissedStatus": ["admin"],
+      "observationsCacheItems":5
+    },
+    "redisCache":{
+      "must": true,
+      "totalRetryTime": 0,
+      "maxRetryTime": 1,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": true,
+      "connection": {
+        "host": "127.0.0.1",
+        "port":  6379,
+        "db": 0,
+        "password": null
+      }
+    },
+    "redisPushNotification":{
+      "must": true,
+      "totalRetryTime": 100,
+      "maxRetryTime": 2,
+      "logError": true,
+      "logCommandsFailWhenRedisIsDown": true,
+      "notificationChannelsPrefix":{
+        "observation": "observations:",
+        "device": "device:",
+        "thing": "thing:"
+      },
+      "connection": {
+        "host": "127.0.0.1",
+        "port":  6379,
+        "db": 1,
+        "password": null
+      }
+    }
+  }
+
+}

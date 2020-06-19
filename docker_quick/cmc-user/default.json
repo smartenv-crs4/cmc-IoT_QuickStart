@@ -1,0 +1,69 @@
+{
+  "dev":{
+    "dbHost":"localhost",
+    "dbPort":"27017",
+    "dbName":"CMCUSERDEV",
+    "limit":50,
+    "skip":0,
+    "logfile":"/var/log/caport2020User-Microservice.log",
+    "authUrl":"http://localhost:3050",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLXVzZXIiLCJlbmFibGVkIjp0cnVlLCJleHAiOjE4NDQwNjUzMTc3NjR9.caioKfxBVbeUxGniHLNDk6jYTUpKKTEmIII9ZKiRiMA",
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "AdminDefaultUser" : {
+      "name": "Admin",
+      "email": "Not set it due to reading from auth ms",
+      "surname":"Admin"
+    },
+    "testConfig":{
+      "usertokens":["UserType1"],
+      "adminokens":["admin"],
+      "authApptokens":["webui"],
+      "adminLogin": {
+        "username": "admin@admin.com",
+        "password": "admin"
+      },
+      "userTypeTest":{
+        "name": "Micio",
+        "email": "mario@cmc.com",
+        "password": "miciomicio",
+        "surname":"Macio"
+      },
+      "webUiAppTest":{
+        "email": "webui@webui.it",
+        "password": "miciomicio"
+      },
+      "msName":"cmc-user"
+    },
+    "redisCache":{
+      "host": "127.0.0.1",
+      "port":  6380,
+      "db": 0,
+      "password":null
+    },
+    "exampleUrl":"http://cp2020.crs4.it/"
+  },
+
+  "production":{
+    "dbHost":"mongo",
+    "dbPort":"27017",
+    "dbName":"CMCUSER",
+    "limit":50,
+    "skip":0,
+    "logfile":"/var/log/caport2020User-Microservice.log",
+    "authUrl":"http://cmc-auth:3050",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLXVzZXIiLCJlbmFibGVkIjp0cnVlLCJleHAiOjE4NDQwNjUzMTc3NjR9.caioKfxBVbeUxGniHLNDk6jYTUpKKTEmIII9ZKiRiMA",
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "AdminDefaultUser" : {
+        "name": "Admin",
+      "email": "Not set it due to reading from auth ms",
+        "surname":"Admin"
+    },
+    "redisCache":{
+      "host": "redis",
+      "port":  6379,
+      "db": 0,
+      "password":null
+    },
+    "exampleUrl":"http://cp2020.crs4.it/"
+  }
+}

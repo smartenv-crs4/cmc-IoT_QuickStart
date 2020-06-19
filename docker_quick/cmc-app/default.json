@@ -1,0 +1,59 @@
+{
+  "dev":{
+    "dbHost":"localhost",
+    "dbPort":"27017",
+    "dbName":"CMCAPPDEV",
+    "limit":50,
+    "skip":0,
+    "logfile":"/var/log/CMC-App-Microservice.log",
+    "authUrl":"http://cmc-auth:3050",
+    "userUrl":"http://cmc-user:3060",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLWFwcCIsImVuYWJsZWQiOnRydWUsImV4cCI6MTg0OTE5MTY3NjkwMX0.3cvLU6RBT51IjioJ_H65Ogds-t2MpBBkUfCJcLVXgPs",
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "redisCache":{
+      "host": "redis",
+      "port":  6379,
+      "db": 0,
+      "password":null
+    },
+    "testConfig":{
+      "apptokens":["AppTest1"],
+      "authApptokens":["webui"],
+      "adminokens":["admin"],
+      "appTypeTest" : {
+        "name": "Micio",
+        "email": "mario@caport.com",
+        "password": "miciomicio",
+        "avatar": "noAvatar"
+      },
+      "webUiAppTest" : {
+        "email": "webui@webui.it",
+        "password": "miciomicio"
+      },
+      "adminLogin": {
+        "username": "admin@admin.com",
+        "password": "admin"
+      },
+      "msName":"cmc-app",
+      "userMsName":"cmc-user"
+    }
+  },
+
+  "production":{
+    "dbHost":"mongo",
+    "dbPort":"27017",
+    "dbName":"CMCAPP",
+    "limit":50,
+    "skip":0,
+    "logfile":"/var/log/CMC-App-Microservice.log",
+    "authUrl":"http://cmc-auth:3050",
+    "auth_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtb2RlIjoibXMiLCJpc3MiOiJub3QgdXNlZCBmbyBtcyIsImVtYWlsIjoibm90IHVzZWQgZm8gbXMiLCJ0eXBlIjoiY21jLWFwcCIsImVuYWJsZWQiOnRydWUsImV4cCI6MTg0OTE5MTY3NjkwMX0.3cvLU6RBT51IjioJ_H65Ogds-t2MpBBkUfCJcLVXgPs",
+    "fastForwardPsw":"f@5tF0rwardP5w",
+    "redisCache":{
+      "host": "redis",
+      "port":  6379,
+      "db": 0,
+      "password":null
+    }
+  }
+}

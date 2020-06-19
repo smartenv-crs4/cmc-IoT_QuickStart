@@ -1,0 +1,105 @@
+version: '3'
+services:
+  mongo:
+    hostname: mongo
+    container_name: mongo
+    image: mongo
+    volumes:
+      - "./data/db/:/data/db"
+    ports:
+      - "3090:27017"
+    #command: 'bash -c "mongod & mongorestore /dump & wait"'
+
+
+  mongo_seed:
+    hostname: mongo-seed
+    container_name: "mongo-seed"
+    image: mongo
+    links:
+      - mongo
+    volumes:
+      - ./mongo-seed:/mongo-seed
+    command: sh /mongo-seed/import.sh
+
+  node-red:
+    hostname: node-red
+    container_name: "node-red"
+    ports:
+      - "4010:1880"
+    image: nodered/node-red
+
+  redis:
+    hostname: redis
+    container_name: "redis"
+    ports:
+      - "4000:6379"
+    image: redis
+
+  cmc-auth:
+    hostname: cmc-auth
+    container_name: "cmc-auth"
+    image: cmc-auth
+    ports:
+      - "3050:3050"
+    environment:
+      PORT: "3050"
+    links:
+      - mongo
+      - redis
+    depends_on:
+      - redis
+      - mongo
+    command: sh -c "dockerize -wait tcp://mongo:27017 -timeout 60s -wait-retry-interval 5s npm start"
+
+  cmc-user:
+    hostname: cmc-user
+    container_name: "cmc-user"
+    image: cmc-user
+    ports:
+      - "3060:3060"
+    environment:
+      PORT: "3060"
+    links:
+      - mongo
+      - redis
+      - cmc-auth
+    depends_on:
+      - cmc-auth
+    command: sh -c "dockerize -wait tcp://mongo:27017 -wait http://cmc-auth:3050 -timeout 60s -wait-retry-interval 5s npm start"
+
+
+  cmc-app:
+    hostname: cmc-app
+    container_name: "cmc-app"
+    image: cmc-app
+    ports:
+      - "3070:3070"
+    environment:
+      PORT: "3070"
+    links:
+      - mongo
+      - redis
+      - cmc-auth
+      - cmc-user
+    depends_on:
+      - cmc-user
+    command: sh -c "dockerize -wait tcp://mongo:27017 -wait http://cmc-auth:3050 -wait http://cmc-user:3060 -timeout 60s -wait-retry-interval 5s npm start"
+
+
+  cmc-iot:
+    hostname: cmc-iot
+    container_name: "cmc-iot"
+    image: cmc-iot
+    ports:
+      - "3080:3080"
+    environment:
+      PORT: "3080"
+    links:
+      - mongo
+      - redis
+      - cmc-auth
+      - cmc-user
+      - cmc-app
+    depends_on:
+      - cmc-app
+    command: sh -c "dockerize -wait tcp://mongo:27017 -wait http://cmc-auth:3050 -wait http://cmc-app:3070 -timeout 60s -wait-retry-interval 5s npm start"
