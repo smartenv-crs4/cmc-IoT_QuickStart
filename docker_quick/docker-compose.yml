@@ -27,6 +27,8 @@ services:
     ports:
       - "4010:1880"
     image: nodered/node-red
+    volumes:
+      - ./nodeRedNode:/nodeRedNode
 
   redis:
     hostname: redis
