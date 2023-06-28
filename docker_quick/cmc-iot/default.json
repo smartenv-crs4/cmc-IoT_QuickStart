@@ -43,7 +43,7 @@
     "cmcIoTOptions": {
       "observationsCanBeUpdated": true,
       "observationsCanBeDeleted": true,
-      "whoCanHandleThingsAndDevicesOwner": ["admin","ms","cmc-IoT"],
+      "whoCanHandleThingsAndDevicesOwner": ["admin","ms","cmc-IoT", "cmc-auth"],
       "authorizationVerbToHandleDismissedStatus": ["admin"],
       "observationsCacheItems":10
     },

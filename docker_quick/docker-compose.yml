@@ -3,7 +3,7 @@ services:
   mongo:
     hostname: mongo
     container_name: mongo
-    image: mongo
+    image: mongo:5.0.3
     volumes:
       - "./data/db/:/data/db"
     ports:
@@ -51,7 +51,7 @@ services:
     depends_on:
       - redis
       - mongo
-    command: sh -c "dockerize -wait tcp://mongo:27017 -timeout 60s -wait-retry-interval 5s npm start"
+    command: sh -c "dockerize -wait tcp://mongo:27017 -timeout 60s -wait-retry-interval 5s npm start -- --authUrl=http://${LOCAL_IP}:3050"
 
   cmc-user:
     hostname: cmc-user
