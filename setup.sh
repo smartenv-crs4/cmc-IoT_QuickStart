@@ -4,7 +4,7 @@
 git clone git@github.com:smartenv-crs4/cmc-auth.git
 git clone git@github.com:smartenv-crs4/cmc-user.git
 git clone git@github.com:smartenv-crs4/cmc-app.git
-git clone git@github.com:smartenv-crs4/cmc-IoT_QuickStart.git
+git clone git@github.com:smartenv-crs4/cmc-iot.git
 
 
 cp docker_quick/cmc-auth/default.json cmc-auth/config/default.json
