@@ -9,6 +9,7 @@ In order to start this quick start tool it is necessary to use docker engine and
 **How to start microservices:** 
 
 1. open a shell 
-2. Create a folder 
-3. Go into new Folder
-4. type sh setup.sh
+2. Clone this repository
+3. Go to repo working directory
+4. Edit .env file setting the IP of your machine
+5. type sh setup.sh
