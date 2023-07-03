@@ -1,15 +1,15 @@
 # cmc-IoT_QuickStart
 
-This quick start tool allows you to start the entire CMC stack and the IoT domain microservice called CMC-IoT. It is therefore responsible for the run of basic microservices such as CMC-Auth, CMC-User, CMC-App, which are essential to interact and use the CMC-IoT services. It will always be the task of this tool to define and configure the minimum and essential set of access rules through tokens between the various microservices. Further access rules or any changes can be configured through the CMC-Auth web interface or through its API.
+This quickstart tool allows you to start the entire CMC stack and the IoT domain microservice, CMC-IoT. It is therefore responsible for running the core microservices CMC-Auth, CMC-User, CMC-App, which are essential to execute the CMC-IoT service. This tool also defines the minimum set of access rules by means of tokens among the various microservices. Further access rules or any changes can be configured through the CMC-Auth web interface or its API.
 
 
 **dependency:**
-In order to start this quick start tool it is necessary to use docker engine and compose
+The only prerequisite for running this quickstart tool is Docker engine and Docker Compose.
 
 **How to start microservices:** 
 
-1. open a shell 
+1. Open a shell 
 2. Clone this repository
 3. Go to repo working directory
 4. Edit .env file setting the IP of your machine
-5. type sh setup.sh
+5. Launch setup.sh script
